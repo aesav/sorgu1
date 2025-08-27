@@ -1,72 +1,4 @@
-﻿<!DOCTYPE html>
-
-<html lang="tr">
-
-<head>
-  <meta charset="UTF-8">
-
-  <title>Sinif Kura Sonuçlari</title>
-
-  <style>
-
-    body {
-
-      font-family: Arial, sans-serif;
-
-      background: #f7f7f7;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      height: 100vh;
-
-    }
-
-    .container {
-
-      background: white;
-
-      padding: 30px;
-
-      border-radius: 12px;
-
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-
-      text-align: center;
-
-      width: 350px;
-
-    }
-
-    input {
-
-      width: 100%;
-
-      padding: 10px;
-
-      margin: 10px 0;
-
-      border-radius: 6px;
-
-      border: 1px solid #ccc;
-
-      font-size: 16px;
-
-    }
-
-    button {
-
-      width: 100%;
-
-      padding: 10px;
-
-      background: #0073e6;
-
-      color: …
-[01:31, 27.08.2025] ahmeterdogansavastaer: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
@@ -120,14 +52,14 @@
 <body>
   <div class="container">
     <h2>Sınıf Kura Sonuçları</h2>
-    <input type="text" id="tc" placeholder="TC Kimlik Numaranızı Girin">
+    <input type="text" id="tc" placeholder="TC Kimlik Numaranızı Girin" maxlength="11">
     <button onclick="sorgula()">Sorgula</button>
     <div class="result" id="sonuc"></div>
   </div>
 
   <script>
     const data = {
-"55453379012": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+      "55453379012": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
 "18415714214": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
 "12907871522": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
 "20623614576": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
@@ -322,18 +254,27 @@
 "29266346042": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
 "35185156396": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
 "18631707700": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" }
-};
+    };
 
     function sorgula() {
-  const tc = document.getElementById("tc").value.trim();
-  const sonucDiv = document.getElementById("sonuc");
+      const tc = document.getElementById("tc").value.trim();
+      const sonucDiv = document.getElementById("sonuc");
 
-  if (data[tc]) {
-    const bilgi = data[tc];
-    sonucDiv.innerHTML = `Sınıfınız: <strong>${bilgi.sinif}</strong><br>Öğretmeniniz: <strong>${bilgi.ogretmen}</strong>`;
-    sonucDiv.style.color = "green";
-  } else {
-    sonucDiv.textContent = "Kayıt bulunamadı. TC Kimlik Numaranızı kontrol edin.";
-    sonucDiv.style.color = "red";
-  }
-}
+      if (tc === "" || tc.length !== 11 || isNaN(tc)) {
+        sonucDiv.textContent = "Lütfen geçerli bir 11 haneli TC Kimlik Numarası girin.";
+        sonucDiv.style.color = "red";
+        return;
+      }
+
+      if (data[tc]) {
+        const bilgi = data[tc];
+        sonucDiv.innerHTML = `Sınıfınız: <strong>${bilgi.sinif}</strong><br>Öğretmeniniz: <strong>${bilgi.ogretmen}</strong>`;
+        sonucDiv.style.color = "green";
+      } else {
+        sonucDiv.textContent = "Kayıt bulunamadı. TC Kimlik Numaranızı kontrol edin.";
+        sonucDiv.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
