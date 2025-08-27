@@ -325,17 +325,15 @@
 };
 
     function sorgula() {
-      const tc = document.getElementById("tc").value.trim();
-      const sonucDiv = document.getElementById("sonuc");
+  const tc = document.getElementById("tc").value.trim();
+  const sonucDiv = document.getElementById("sonuc");
 
-      if (data[tc]) {
-        sonucDiv.textContent = "Sınıfınız: " + data[tc];
-        sonucDiv.style.color = "green";
-      } else {
-        sonucDiv.textContent = "Kayıt bulunamadı. TC Kimlik Numaranızı kontrol edin.";
-        sonucDiv.style.color = "red";
-      }
-    }
-  </script>
-</body>
-</html>
+  if (data[tc]) {
+    const bilgi = data[tc];
+    sonucDiv.innerHTML = `Sınıfınız: <strong>${bilgi.sinif}</strong><br>Öğretmeniniz: <strong>${bilgi.ogretmen}</strong>`;
+    sonucDiv.style.color = "green";
+  } else {
+    sonucDiv.textContent = "Kayıt bulunamadı. TC Kimlik Numaranızı kontrol edin.";
+    sonucDiv.style.color = "red";
+  }
+}
