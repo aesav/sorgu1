@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Sinif Kura Sonuçlari</title>
+
+  <style>
+
+    body {
+
+      font-family: Arial, sans-serif;
+
+      background: #f7f7f7;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      height: 100vh;
+
+    }
+
+    .container {
+
+      background: white;
+
+      padding: 30px;
+
+      border-radius: 12px;
+
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+      text-align: center;
+
+      width: 350px;
+
+    }
+
+    input {
+
+      width: 100%;
+
+      padding: 10px;
+
+      margin: 10px 0;
+
+      border-radius: 6px;
+
+      border: 1px solid #ccc;
+
+      font-size: 16px;
+
+    }
+
+    button {
+
+      width: 100%;
+
+      padding: 10px;
+
+      background: #0073e6;
+
+      color: …
+[01:31, 27.08.2025] ahmeterdogansavastaer: <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sınıf Kura Sonuçları</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 350px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #0073e6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005bb5;
+    }
+    .result {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sınıf Kura Sonuçları</h2>
+    <input type="text" id="tc" placeholder="TC Kimlik Numaranızı Girin">
+    <button onclick="sorgula()">Sorgula</button>
+    <div class="result" id="sonuc"></div>
+  </div>
+
+  <script>
+    const data = {
+"55453379012": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"18415714214": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"12907871522": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"20623614576": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"38065033930": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"17086732510": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"27640409338": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"14788809342": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"14512834626": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"29827307772": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"13795842526": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"38779009856": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"26602415400": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"38809036388": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"22834541672": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"28684341332": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"37309058982": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"19573650062": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"21049600068": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"26374422774": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"63739004046": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"70609212388": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"22910307420": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"50971877712": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"18607681928": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"61171513072": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"19076591794": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"14448046810": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"27895372340": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"24979470350": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"99003243088": { "sinif": "1-A", "ogretmen": "MURAT TURGUT" },
+"99531138290": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"63640459614": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"15858047626": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"53980752728": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"30457287624": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"37246060154": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"27541403152": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"47722656054": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"16786715304": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"28489352854": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"31450094950": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"38404022564": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"19687645602": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"20161631066": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"24868473158": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"29326324416": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"19570650508": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"22957536616": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"34528151852": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"28324358522": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"19657646622": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"34243172972": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"15706804708": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"29086333598": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"62446506430": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"25024485718": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"37894065372": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"14898085216": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"71158211624": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"36923342798": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"37426664592": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"43883089328": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"29714583098": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"20377623336": { "sinif": "1-B", "ogretmen": "ŞENGÜL ARTAR" },
+"99710856892": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"54940745446": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"24802494430": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"36154096880": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"38203473796": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"39454006528": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"28570350370": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"32863219060": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"21061600848": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"33196212018": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"13609861262": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"21142597494": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"32686212606": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"65935368106": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"36457087516": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"23389525254": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"23002538104": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"30115298368": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"35809109050": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"33259193926": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"21829547200": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"23233554232": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"17713884650": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"99105251226": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"33919172162": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"35674113336": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"33311466524": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"35842107280": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"45940262248": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"33256205264": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"20713640508": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"35728111042": { "sinif": "1-C", "ogretmen": "İBRAHİM KIZILKAYA" },
+"99900118120": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"14320825274": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"15949797652": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"34442296486": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"35719111402": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"13345856904": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"15295792820": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"28925086404": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"35143103134": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"34303176872": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"68911280218": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"50422895814": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"35405113888": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"12682879980": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"28981336550": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"28642342708": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"20656613638": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"18481686316": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"16960736828": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"16846740680": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"38275025800": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"28618365380": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"47977595092": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"29488347858": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"32404222436": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"29641314932": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"21484585692": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"22267586042": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"38734011658": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"36913072124": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"31892131558": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"52840817140": { "sinif": "1-D", "ogretmen": "HACER KARA" },
+"39781991344": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"99378447876": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"33970170640": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"21229595252": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"29179345392": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"36316092392": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"15712773340": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"35530118376": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"13408854878": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"38923017744": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"23548437084": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"28831341796": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"28127640572": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"32251227790": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"22138590178": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"24793448382": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"12203202518": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"34753156790": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"37423054716": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"37006068628": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"28348357044": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"30694279482": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"34057166754": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"38524045528": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"29641314178": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"15379794566": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"33961169974": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"24739362994": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"37129081214": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"13987820806": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"24109471110": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"70369226656": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"12082895016": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"19132664226": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"25630047928": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"34849158912": { "sinif": "1-E", "ogretmen": "FATMA BAKIRLI" },
+"27529550588": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"38815422014": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"12748877790": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"21328581156": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"16699745962": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"31117264870": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"24397502114": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"13240861522": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"22000587824": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"38095033078": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"14359840262": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"35444397492": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"13087866346": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"70918202650": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"39598008372": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"28436630226": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"28604093372": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"36487327392": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"37435054810": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"42544438048": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"56800658750": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"35890103784": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"38875005714": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"20552714668": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"20530618612": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"31508282100": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"24577482762": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"29266346042": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"35185156396": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" },
+"18631707700": { "sinif": "1-F", "ogretmen": "MUSLİHİTTİN KILIÇ" }
+};
+
+    function sorgula() {
+      const tc = document.getElementById("tc").value.trim();
+      const sonucDiv = document.getElementById("sonuc");
+
+      if (data[tc]) {
+        sonucDiv.textContent = "Sınıfınız: " + data[tc];
+        sonucDiv.style.color = "green";
+      } else {
+        sonucDiv.textContent = "Kayıt bulunamadı. TC Kimlik Numaranızı kontrol edin.";
+        sonucDiv.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
